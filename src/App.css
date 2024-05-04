@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.break{
+    background-color: rgb(0, 0, 0 , .1);
+    height: 1px;
+    width: -webkit-fill-available;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Sign in and Sign up pages*/
+
+.SignContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100svh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.SignFormContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.SignWelcome{
+    margin-bottom: 30px;
+}
+.SignFormContainer form {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.SignFormContainer input, h3 , h1 , h4 , .SignDifferent{
+    width: -webkit-fill-available;
+    height: 32px;
+    border-radius: 10px;
+    padding: 4px;
+    border-color: rgb(0, 0, 0 , .1) ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.SignFormContainer .SignSubmit{
+    background-color: blue;
+    color: white;
+    font-size: large;
+    padding: 10px;
+    height: auto;
+    cursor: pointer;
+
 }
+.SignDifferent{
+    border: rgb(0, 0, 0 , .1) solid 2px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    cursor: pointer;
+
+}
+
+
+.SignFormDiv{
+    display: flex;
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+    align-items: center;
+}
+
+.SignFormDiv p{
+    margin: 0 4px;
+}
+
+.SignImageContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.SignImageContainer img{
+    height: 100svh;
+    width: 85%;
+ 
+}
+
+.SignFormFooter{
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width:1200px) {
+
+    .SignImageContainer img{
+        width: auto;
+    }
+
+    .SignDifferent p{
+        font-size: .8rem;
+    }
+    
+     
+}
+
+@media screen and (max-width:1030px) {
+    .SignContainer{
+        display: grid;
+        grid-template-columns: auto;
+        height: 100svh;
+    }
+    .SignImageContainer{
+        display: none;
+    }
+}
+
+@media screen and (max-width:615px) {
+    .SignFormContainer form {
+        width: 90%;
+    }   
+}
+
