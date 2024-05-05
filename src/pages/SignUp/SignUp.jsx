@@ -9,15 +9,15 @@ const SignUp = () => {
       <div className="SignFormContainer">
         <form>
           <h1 className="SignWelcome">Get started now</h1>
-          <label htmlFor="email">Name</label>
-          <input id="email" placeholder="Enter your Name" type="text" />
+          <label htmlFor="name">Name</label>
+          <input id="name" placeholder="Enter your Name" type="text" />
           <label htmlFor="email">Email address</label>
-          <input id="email" placeholder="Enter your email" type="text" />
+          <input id="email" placeholder="Enter your email" type="email" />
           <label htmlFor="Password">Password</label>
           <input
             id="Password"
             placeholder="Please enter your password"
-            type="text"
+            type="password"
           />
           <input type="submit" value={"Sign up"} className="SignSubmit" />
           <div className="SignFormDiv">

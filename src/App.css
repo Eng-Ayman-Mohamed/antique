@@ -1,10 +1,25 @@
+:root{
+    --primary-color:#004380;
+    --primary-font-color:white;
+    --secondary-font:"Julius Sans One" ; 
+    --border:light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) solid 1px;
+    --border-radius:10px;
+}
+
+
+
 .break{
     background-color: rgb(0, 0, 0 , .1);
     height: 1px;
     width: -webkit-fill-available;
 }
 
-/*Sign in and Sign up pages*/
+
+/*
+
+Sign in and Sign up pages
+
+*/
 
 .SignContainer{
     display: grid;
@@ -16,6 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .SignWelcome{
@@ -26,20 +42,23 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    border: black solid 1px;
+    padding: 60px 20px;
+    border-radius: 20px;
 }
 
 .SignFormContainer input, h3 , h1 , h4 , .SignDifferent{
     width: -webkit-fill-available;
     height: 32px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     padding: 4px;
-    border-color: rgb(0, 0, 0 , .1) ;
+    border-color: var(--border) ;
 }
 
 
 .SignFormContainer .SignSubmit{
-    background-color: blue;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
     font-size: large;
     padding: 10px;
     height: auto;
@@ -47,7 +66,7 @@
 
 }
 .SignDifferent{
-    border: rgb(0, 0, 0 , .1) solid 2px ;
+    border: var(--border) ;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,7 +119,7 @@
      
 }
 
-@media screen and (max-width:1030px) {
+@media screen and (max-width:1010px) {
     .SignContainer{
         display: grid;
         grid-template-columns: auto;
@@ -111,9 +130,99 @@
     }
 }
 
-@media screen and (max-width:615px) {
+@media screen and (max-width:500px) {
     .SignFormContainer form {
-        width: 90%;
+        width: 80%;
     }   
 }
 
+
+@media screen and (max-width:380px) {
+    .SignFormContainer form {
+        width: 85%;
+    }   
+}
+/*
+
+    Navigation bar 
+
+*/
+
+.NavBarContainer{
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px 20px;
+/*     height: 40px;
+ */}
+
+.NavBarRight {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 5px;
+}
+.NavBarLeft{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.NavBarRight >p{
+    padding-left:5px ;
+    border-left: white solid 1px ;
+}
+
+.NavBarLanguage , .NavBarAccount{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    cursor: pointer;
+}
+
+
+/* 
+
+Header 
+
+*/
+
+.HeaderContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px 20px;
+    border-bottom: var(--border);
+}
+
+.HeaderLeft{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    
+}
+
+
+.HeaderLeft p{
+    font-size: xx-large;
+    font-family: var(--secondary-font) ,"Outfit" ,'Segoe UI', 'Roboto', 'Oxygen';
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.HeaderRight{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.HeaderSearch {
+    display: flex;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    border-style: inset;
+
+}
+
+.HeaderSearch input, input:focus{
+    border: none;
+    font-size: large;
+}
