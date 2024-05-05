@@ -10,17 +10,17 @@ const SignIn = () => {
         <form>
           <h1 className="SignWelcome">Welcome Back</h1>
           <label htmlFor="email">Email address</label>
-          <input id="email" placeholder="Enter your email" type="text" />
+          <input id="email" placeholder="Enter your email" type="email" />
           <label htmlFor="Password">Password</label>
           <input
             id="Password"
             placeholder="Please enter your password"
-            type="text"
+            type="password"
           />
           <input type="submit" value={"Login"} className="SignSubmit" />
           <div className="SignFormDiv">
             <div className="break" />
-            <p>OR</p>
+            <p>O</p>
             <div className="break" />
           </div>
           <div className="SignFormDiv">
