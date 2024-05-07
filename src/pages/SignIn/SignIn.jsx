@@ -1,13 +1,18 @@
 import { FcGoogle } from "react-icons/fc";
 import { TfiFacebook } from "react-icons/tfi";
 import image from "./SignIn.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   return (
     <div className="SignContainer">
       <div className="SignFormContainer">
-        <form>
+        <form
+          onSubmit={() => {
+            navigate("/antique");
+          }}
+        >
           <h1 className="SignWelcome">Welcome Back</h1>
           <label htmlFor="email">Email address</label>
           <input id="email" placeholder="Enter your email" type="email" />
@@ -20,7 +25,7 @@ const SignIn = () => {
           <input type="submit" value={"Login"} className="SignSubmit" />
           <div className="SignFormDiv">
             <div className="break" />
-            <p>O</p>
+            <p>OR</p>
             <div className="break" />
           </div>
           <div className="SignFormDiv">
@@ -35,8 +40,7 @@ const SignIn = () => {
           </div>
           <div className="SignFormFooter">
             <p>Don't have account?</p>
-            <Link to={"/antique"}>
-              {" "}
+            <Link to={"/antique/SignUp"}>
               <p style={{ color: "blue" }}>Sign up</p>
             </Link>
           </div>

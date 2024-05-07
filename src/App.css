@@ -226,3 +226,45 @@ Header
     border: none;
     font-size: large;
 }
+
+/* 
+
+Footer
+
+*/
+
+.FooterContainer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 7px  20px;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: small;
+
+}
+
+.FooterLeft{
+    display: flex;
+    column-gap: 15px;
+}
+
+
+/* 
+
+OffersContainer
+
+*/
+
+.OffersContainer{
+    background-color: black;
+    color: var(--primary-font-color);
+    font-weight: 100;
+    text-align: center;
+    padding:5px 0;
+}

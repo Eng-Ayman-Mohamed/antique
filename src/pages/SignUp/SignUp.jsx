@@ -1,13 +1,18 @@
 import { FcGoogle } from "react-icons/fc";
 import { TfiFacebook } from "react-icons/tfi";
 import image from "./SignUp.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   return (
     <div className="SignContainer">
       <div className="SignFormContainer">
-        <form>
+        <form
+          onSubmit={() => {
+            navigate("/antique");
+          }}
+        >
           <h1 className="SignWelcome">Get started now</h1>
           <label htmlFor="name">Name</label>
           <input id="name" placeholder="Enter your Name" type="text" />

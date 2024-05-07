@@ -15,10 +15,10 @@ const Header = () => {
         <CiMenuFries style={{ cursor: "pointer" }} size={"2rem"} />
       </div>
       <div className="HeaderRight">
-        <div className="HeaderSearch">
+        {/* <div className="HeaderSearch">
           <CiSearch size={"2rem"} />
           <input placeholder="Search" />
-        </div>
+        </div> */}
       </div>
     </div>
   );
