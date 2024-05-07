@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CiMenuFries } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
-
+/* import { CiSearch } from "react-icons/ci";
+ */
 const Header = () => {
   return (
     <div className="HeaderContainer">

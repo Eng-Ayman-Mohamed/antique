@@ -254,6 +254,12 @@ Footer
     column-gap: 15px;
 }
 
+@media screen and (max-width:500px) {
+    .FooterContainer{
+        font-size: xx-small;
+    }
+}
+
 
 /* 
 
@@ -267,4 +273,85 @@ OffersContainer
     font-weight: 100;
     text-align: center;
     padding:5px 0;
+}
+
+
+
+
+@media screen and (max-width:550px) {
+    .OffersContainer{
+        font-size: small;
+    }
+}
+
+/* 
+
+Landing
+
+*/
+/* 
+.LandingContainer{
+    height: image-height("./components/Landing/Landing.png");
+} */
+
+.LandingContainer img{
+    position: absolute;
+    width: 100%;
+}
+
+ .LandingTextWrapper{
+    position: absolute;
+    display: grid;
+    width: -webkit-fill-available;
+   
+}
+
+.LandingContainer p{
+    font-family:"Stick No Bills", "sans-serif";
+    display: inline-block;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+ .LandingImageName{
+    font-weight: 900;
+    font-size: 3rem;
+    margin-left: 10%;
+}
+
+.BrandVoice{
+    font-size: 2rem;
+    font-weight: 700;
+    border: black solid 1px;
+    margin-right: 5%;
+    padding: 5px;
+    justify-self: flex-end;
+    margin-left: 10%;
+}
+
+@media screen and (max-width:900px) {
+.BrandVoice{font-size: 1.5rem;}
+
+}
+
+@media screen and (max-width:800px) {
+    .LandingImageName{font-size: 2rem;}
+    
+}
+
+@media screen and (max-width:600px) {
+        .BrandVoice{font-size: 1rem;}
+        
+}
+@media screen and (max-width:500px) {
+    .LandingImageName{font-size: 1.5rem;}
+}
+
+@media screen and (max-width:440px) {
+    .BrandVoice{font-size: .8rem;}
+    
+}
+
+@media screen and (max-width:400px) {
+    .LandingImageName{font-size: 1rem;}
 }
