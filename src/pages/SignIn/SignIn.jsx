@@ -41,7 +41,7 @@ const SignIn = () => {
           <div className="SignFormFooter">
             <p>Don't have account?</p>
             <Link to={"/antique/SignUp"}>
-              <p style={{ color: "blue" }}>Sign up</p>
+              <p className="SignFormFooterLink">Sign up</p>
             </Link>
           </div>
         </form>
