@@ -12,7 +12,7 @@ const Header = () => {
           <p>Antique</p>
         </Link>
 
-        <CiMenuFries style={{ cursor: "pointer" }} size={"2rem"} />
+        <CiMenuFries style={{ cursor: "pointer" }} size={"1.5em"} />
       </div>
       <div className="HeaderRight">
         {/* <div className="HeaderSearch">
