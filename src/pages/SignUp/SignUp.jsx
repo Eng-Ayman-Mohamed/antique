@@ -15,13 +15,13 @@ const SignUp = () => {
         >
           <h1 className="SignWelcome">Get started now</h1>
           <label htmlFor="name">Name</label>
-          <input id="name" placeholder="Enter your Name" type="text" />
+          <input id="name" placeholder="John Doe" type="text" />
           <label htmlFor="email">Email address</label>
-          <input id="email" placeholder="Enter your email" type="email" />
+          <input id="email" placeholder="JohnDoe@gmail.com" type="email" />
           <label htmlFor="Password">Password</label>
           <input
             id="Password"
-            placeholder="Please enter your password"
+            placeholder="Must have at least 6 characters"
             type="password"
           />
           <input type="submit" value={"Sign up"} className="SignSubmit" />

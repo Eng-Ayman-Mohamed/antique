@@ -3,7 +3,7 @@ import image from "./Landing.png";
 const Landing = () => {
   return (
     <div className="LandingContainer">
-      <img src={image} alt="The Golden Majesty" />
+      <img loading="lazy" src={image} alt="The Golden Majesty" />
       <div className="LandingTextWrapper">
         <p className="LandingImageName">The Golden Majesty</p>
         <p className="BrandVoice">

@@ -1,55 +1,95 @@
 :root{
+    --main-back-ground-color:#11192e;
     --primary-color:#004380;
-    --primary-font-color:white;
+    --secondary-color:#e9f2ff;
+    --primary-font-color:#e9f2ff;
+    --secondary-font-color:#11192e;
     --secondary-font:"Julius Sans One" ; 
     --border:light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) solid 1px;
     --border-radius:10px;
-    --main-font-size : xx-large;
-    --sub-main-font-size:large;
     --sub-main-font-gap:15px;
     --form-padding:5px;
+
+
+    /* Default font sizes for mobile devices */
+    --body-font-size: 12px;
+    --heading-font-size: 18px;
+    --subheading-font-size: 16px;
+    --small-font-size: 10px;
+
+    
 }
 
-
-@media screen and (max-width:1010px) {
-    :root{
-        --main-font-size : x-large;
-        --sub-main-font-size:medium;
-        --sub-main-font-gap:10px;
-
-    }
-
+body {
+    font-size: var(--body-font-size);
+    color:var(--primary-font-color);
+    background-color: var(--main-back-ground-color);
 }
 
-@media screen and (max-width:600px) {
-    :root{
-        --main-font-size : large;
-        --sub-main-font-size:small;
-        --sub-main-font-gap:7px;
-
-    }
+a{
+    color: var(--primary-color);
 }
 
-@media screen and (max-width:500px) {
-    :root{
-        --sub-main-font-size:x-small;
-        --sub-main-font-gap:5px;
-    }
-}
+/* For phones */
+@media (min-width: 375px) {
+    :root {
 
-
-@media screen and (max-width:400px) {
-    :root{
-        --sub-main-font-size:xx-small;
+        --primary-color:#6f8000;
+        --body-font-size: 14px;
+        --heading-font-size: 20px;
+        --subheading-font-size: 18px;
+        --small-font-size: 11px;
     }
 }
+
+/* For tablets */
+@media (min-width: 768px) {
+    :root {
+ 
+        --primary-font-color:#11192e;
+        --main-back-ground-color:#e9f2ff;
+ 
+        --secondary-color:#11192e;
+        --secondary-font-color:#e9f2ff;
+
+        --primary-color:#802d00;
+        --body-font-size: 16px;
+        --heading-font-size: 24px;
+        --subheading-font-size: 20px;
+        --small-font-size: 12px;
+    }
+}
+
+/* For small desktops */
+@media (min-width: 992px) {
+    :root {
+        --primary-color:#007c80;
+        --body-font-size: 18px;
+        --heading-font-size: 26px;
+        --subheading-font-size: 22px;
+        --small-font-size: 13px;
+    }
+}
+
+/* For large desktops and TVs */
+@media (min-width: 1200px) {
+    :root {
+        --primary-color:#008024;
+        --body-font-size: 20px;
+        --heading-font-size: 28px;
+        --subheading-font-size: 24px;
+        --small-font-size: 14px;
+    }
+}
+
 
 
 .break{
-    background-color: rgb(0, 0, 0 , .1);
+    background-color: var(--secondary-color);
     height: 1px;
     width: -webkit-fill-available;
 }
+
 
 
 
@@ -62,7 +102,7 @@ Sign in and Sign up pages
 
 .SignContainer{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     height: 100svh;
 }
 
@@ -74,6 +114,7 @@ Sign in and Sign up pages
 }
 
 .SignWelcome{
+    font-size: var(--heading-font-size);
     margin-bottom: 30px;
 }
 .SignFormContainer form {
@@ -81,8 +122,8 @@ Sign in and Sign up pages
     width: 60%;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    border: black solid 1px;
+    gap: 12px;
+    border: var(--secondary-color) solid 1px;
     padding: 60px 20px;
     border-radius: 20px;
 }
@@ -95,20 +136,38 @@ Sign in and Sign up pages
     border-color: var(--border) ;
 }
 
+
+
 .SignFormContainer #email , #name , #Password{
+    background-color: var(--main-back-ground-color);
     padding:var(--form-padding);
-    
+    font-size: var(--small-font-size);
+    border-radius: 15px;
+    border: var(--secondary-color) solid 1px;
 }
 
+.SignFormContainer #email:focus-visible , #name:focus-visible , #Password:focus-visible{
+    outline: var(--primary-color) solid 2px;
+}
 
-.SignFormContainer .SignSubmit{
+  
+
+
+.SignSubmit{
     background-color: var(--primary-color);
-    color: var(--primary-font-color);
-    font-size: large;
+    color: var(--secondary-font-color);
+    font-size: var(--body-font-size);
     padding: 10px;
     height: auto;
     cursor: pointer;
+    border: var(--primary-color) solid 2px;
+    border-radius: 20px;
 
+}
+.SignSubmit:hover{
+    background-color: var(--main-back-ground-color);
+    border: var(--primary-color) solid 2px;
+    color: var(--primary-color);
 }
 .SignDifferent{
     border: var(--border) ;
@@ -118,7 +177,7 @@ Sign in and Sign up pages
     width: auto;
     cursor: pointer;
     padding:var(--form-padding);
-
+    font-size: var(--small-font-size);
 }
 
 
@@ -153,7 +212,6 @@ Sign in and Sign up pages
 }
 
 .SignFormFooterLink{
-    color: blue;
     text-decoration: underline;
 }
 @media screen and (max-width:1200px) {
@@ -162,17 +220,14 @@ Sign in and Sign up pages
         width: 100%;
     }
 
-    .SignDifferent p{
-        font-size: .8rem;
-    }
-    
+   
      
 }
 
 @media screen and (max-width:1010px) {
     .SignContainer{
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         height: 100svh;
     }
     .SignImageContainer{
@@ -191,6 +246,18 @@ Sign in and Sign up pages
     .SignFormContainer form {
         width: 85%;
     }   
+
+    .SignDifferent>p{
+        display: none;
+    }
+    .SignFormDiv{
+        justify-content: center;
+        column-gap: 15px;
+     }
+    .SignDifferent{
+        border-radius: 10px;
+        font-size: 1rem;
+    }
 }
 /*
 
@@ -199,10 +266,9 @@ Sign in and Sign up pages
 */
 
 .NavBarContainer{
-    font-size: var(--sub-main-font-size);
     background-color: var(--primary-color);
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     padding: 10px 20px;
     position: -webkit-sticky;
     position: sticky;
@@ -223,11 +289,11 @@ Sign in and Sign up pages
 
 .NavBarRight >p{
     padding-left:5px ;
-    border-left: white solid 1px ;
+    border-left: var(--secondary-color) solid 1px ;
 }
 
 .NavBarLanguage , .NavBarAccount ,.NavBarCart,.NavBarWallet{
-    color: var(--primary-font-color);
+    color: var(--secondary-font-color);
     display: flex;
     align-items: center;
     column-gap: 5px;
@@ -259,14 +325,14 @@ Header
 .HeaderContainer{
    
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     padding: 10px 20px;
     border-bottom: var(--border);
 }
 
 .HeaderLeft{
     align-items: center;
-    font-size: var(--main-font-size);
+    font-size: var(--heading-font-size);
     display: flex;
     justify-content: flex-start;
     column-gap: 10px;
@@ -286,18 +352,6 @@ Header
     justify-content: flex-end;
 }
 
-.HeaderSearch {
-    display: flex;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    border-style: inset;
-
-}
-
-.HeaderSearch input, input:focus{
-    border: none;
-    font-size: large;
-}
 
 /* 
 
@@ -306,16 +360,16 @@ Footer
 */
 
 .FooterContainer{
-    font-size: var( --sub-main-font-size);
+    font-size: var(--small-font-size);
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 7px  20px;
     background-color: var(--primary-color);
-    color: var(--primary-font-color);
+    color: var(--secondary-font-color);
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: center;
 
@@ -324,9 +378,18 @@ Footer
 .FooterLeft{
     display: flex;
     column-gap:var(--sub-main-font-gap);
+    justify-content: flex-end;
 }
 
+.FooterContainer p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1;
+    -webkit-box-orient: vertical;
 
+}
 
 
 /* 
@@ -336,8 +399,8 @@ OffersContainer
 */
 
 .OffersContainer{
-    background-color: black;
-    color: var(--primary-font-color);
+    background-color: var(--secondary-color);
+    color: var(--secondary-font-color);
     font-weight: 100;
     text-align: center;
     padding:5px 0;
@@ -346,21 +409,13 @@ OffersContainer
 
 
 
-@media screen and (max-width:550px) {
-    .OffersContainer{
-        font-size: small;
-    }
-}
 
 /* 
 
 Landing
 
 */
-/* 
 .LandingContainer{
-    height: image-height("./components/Landing/Landing.png");
-} */.LandingContainer{
     height: 33vw;
 }
 .LandingContainer img{
@@ -369,6 +424,7 @@ Landing
 }
 
  .LandingTextWrapper{
+    color: var(--secondary-font-color);
     position: absolute;
     display: grid;
     width: -webkit-fill-available;
@@ -384,46 +440,20 @@ Landing
 
  .LandingImageName{
     font-weight: 900;
-    font-size: 3rem;
+    font-size: calc(1.5 * var(--heading-font-size)) ;
     margin-left: 10%;
 }
 
 .BrandVoice{
-    font-size: 2rem;
+    font-size: var(--heading-font-size);
     font-weight: 700;
-    border: black solid 1px;
+    border: var(--secondary-font-color) solid 1px;
     margin-right: 5%;
     padding: 5px;
     justify-self: flex-end;
     margin-left: 10%;
 }
 
-@media screen and (max-width:900px) {
-.BrandVoice{font-size: 1.5rem;}
-
-}
-
-@media screen and (max-width:800px) {
-    .LandingImageName{font-size: 2rem;}
-    
-}
-
-@media screen and (max-width:600px) {
-        .BrandVoice{font-size: 1rem;}
-        
-}
-@media screen and (max-width:500px) {
-    .LandingImageName{font-size: 1.5rem;}
-}
-
-@media screen and (max-width:440px) {
-    .BrandVoice{font-size: .8rem;}
-    
-}
-
-@media screen and (max-width:400px) {
-    .LandingImageName{font-size: 1rem;}
-}
 
 
 /* 
@@ -431,6 +461,7 @@ Landing
 Categories
 
 */
+
 
 .CategoriesContainer{
     display: flex;
@@ -441,7 +472,7 @@ Categories
 
 .CategoriesHeader{
     font-weight: 500;
-    font-size: var(--main-font-size);
+    font-size: var(--heading-font-size);
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
@@ -451,6 +482,10 @@ Categories
     width: 80%;
 }
 
+.slick-next:before, .slick-prev:before {
+    color: var(--secondary-color);
+}
+
 /* 
 
 Category Card
@@ -458,7 +493,7 @@ Category Card
 */
 
 .CategoryCardContainer{
-    margin: .1rem;
+    margin: .3rem;
 }
 
 .CategoryCardDetails{
@@ -467,10 +502,10 @@ Category Card
     background: rgba(57, 57, 57, 0.5);
     bottom: 7vh;
     justify-content: space-between;
-    color: white;
+    color: #e9f2ff;
     padding: 5px 10px;
-    align-items: center
-
+    align-items: center;
+    font-size: var(--subheading-font-size);
 
 }
 .CategoryCardDetails>p{
@@ -480,10 +515,6 @@ Category Card
 .CategoryCardContainer a>img{
     width: 100%;
     border-radius: 10px;
-}
-
-@media screen and (max-width:1000px) {
-    .CategoryCardDetails>h3{ font-size: .95rem;}
 }
 
 
@@ -500,7 +531,7 @@ Products
 
 .ProductsContainerHeader{
     font-weight: 500;
-    font-size: var(--main-font-size);
+    font-size: var(--heading-font-size);
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -511,18 +542,18 @@ Products
 .ProductsCardsContainer{
     width: 80%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 10px;
 }
 
 
 @media screen and (max-width:600px) {
-    .ProductsCardsContainer{   grid-template-columns: auto auto auto ;
+    .ProductsCardsContainer{   grid-template-columns: 1fr 1fr 1fr ;
     }
 }
 
 @media screen and (max-width:450px) {
-    .ProductsCardsContainer{   grid-template-columns: auto auto  ;
+    .ProductsCardsContainer{   grid-template-columns: 1fr 1fr  ;
     }
 }
 
@@ -535,7 +566,7 @@ Product
 */
 .ProductCardContainer{
     margin: .2rem;
-    border: black solid 1px;
+    border: var(--border);
     border-radius: 10px;
 
 }
@@ -556,6 +587,7 @@ Product
     gap: 10px;
 }
 .ProductCardDetails{
+    font-size: var(--small-font-size);
     display: flex;
     justify-content: space-between;
 }
