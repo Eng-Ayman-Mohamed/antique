@@ -15,13 +15,9 @@ const SignIn = () => {
         >
           <h1 className="SignWelcome">Welcome Back</h1>
           <label htmlFor="email">Email address</label>
-          <input id="email" placeholder="Enter your email" type="email" />
+          <input id="email" placeholder="JohnDoe@gmail.com" type="email" />
           <label htmlFor="Password">Password</label>
-          <input
-            id="Password"
-            placeholder="Please enter your password"
-            type="password"
-          />
+          <input id="Password" placeholder="Your password" type="password" />
           <input type="submit" value={"Login"} className="SignSubmit" />
           <div className="SignFormDiv">
             <div className="break" />
