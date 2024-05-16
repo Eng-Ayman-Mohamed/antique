@@ -5,7 +5,7 @@ const CategoryCard = ({ card }) => {
   return (
     <div className="CategoryCardContainer">
       <Link>
-        <img src={image} alt="" />
+        <img loading="lazy" src={image} alt="" />
         <div className="CategoryCardDetails">
           <h3>{card.name}</h3>
         </div>
