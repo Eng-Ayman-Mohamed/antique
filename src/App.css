@@ -1,15 +1,11 @@
 :root{
+    /* Colors */
+    --primary-back-ground-color:#004380;
+    --Fixed-font-color:#e9f2ff;
     --main-back-ground-color:#11192e;
-    --primary-color:#004380;
-    --secondary-color:#e9f2ff;
     --primary-font-color:#e9f2ff;
+    --secondary-back-ground-color:#e9f2ff;
     --secondary-font-color:#11192e;
-    --secondary-font:"Julius Sans One" ; 
-    --border:light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) solid 1px;
-    --border-radius:10px;
-    --sub-main-font-gap:15px;
-    --form-padding:5px;
-
 
     /* Default font sizes for mobile devices */
     --body-font-size: 12px;
@@ -17,7 +13,14 @@
     --subheading-font-size: 16px;
     --small-font-size: 10px;
 
-    
+    /* Borders */
+    --border-color:light-dark(rgb(255, 255, 255), rgb(255, 255, 255));
+    --border: var(--border-color) solid 1px;
+    --primary-border:var(--primary-back-ground-color) solid 2px;
+
+    --secondary-font:"Julius Sans One" ; 
+    --sub-main-font-gap:15px;
+    --form-padding:5px;
 }
 
 body {
@@ -27,14 +30,14 @@ body {
 }
 
 a{
-    color: var(--primary-color);
+    color: var(--primary-back-ground-color);
 }
 
 /* For phones */
 @media (min-width: 375px) {
     :root {
 
-        --primary-color:#6f8000;
+        --primary-back-ground-color:#80002d;
         --body-font-size: 14px;
         --heading-font-size: 20px;
         --subheading-font-size: 18px;
@@ -45,14 +48,15 @@ a{
 /* For tablets */
 @media (min-width: 768px) {
     :root {
- 
+        /* Dark mood */
         --primary-font-color:#11192e;
         --main-back-ground-color:#e9f2ff;
- 
-        --secondary-color:#11192e;
+         --secondary-back-ground-color:#11192e;
         --secondary-font-color:#e9f2ff;
+        --primary-back-ground-color:#802d00;
+        --border-color:light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 
-        --primary-color:#802d00;
+
         --body-font-size: 16px;
         --heading-font-size: 24px;
         --subheading-font-size: 20px;
@@ -63,7 +67,7 @@ a{
 /* For small desktops */
 @media (min-width: 992px) {
     :root {
-        --primary-color:#007c80;
+        --primary-back-ground-color:#007c80;
         --body-font-size: 18px;
         --heading-font-size: 26px;
         --subheading-font-size: 22px;
@@ -74,7 +78,7 @@ a{
 /* For large desktops and TVs */
 @media (min-width: 1200px) {
     :root {
-        --primary-color:#008024;
+        --primary-back-ground-color:#800055;
         --body-font-size: 20px;
         --heading-font-size: 28px;
         --subheading-font-size: 24px;
@@ -85,7 +89,7 @@ a{
 
 
 .break{
-    background-color: var(--secondary-color);
+    background-color: var( --secondary-back-ground-color);
     height: 1px;
     width: -webkit-fill-available;
 }
@@ -118,22 +122,22 @@ Sign in and Sign up pages
     margin-bottom: 30px;
 }
 .SignFormContainer form {
+    
     flex-direction: column;
     width: 60%;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    border: var(--secondary-color) solid 1px;
+    border: var(--border);
     padding: 60px 20px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .SignFormContainer input+ h3 + h1 , h4 + .SignDifferent{
     width: -webkit-fill-available;
     height: 32px;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     padding: 4px;
-    border-color: var(--border) ;
 }
 
 
@@ -141,33 +145,32 @@ Sign in and Sign up pages
 .SignFormContainer #email , #name , #Password{
     background-color: var(--main-back-ground-color);
     padding:var(--form-padding);
-    font-size: var(--small-font-size);
+    font-size: var(--body-font-size);
     border-radius: 15px;
-    border: var(--secondary-color) solid 1px;
+    border:var(--border);
 }
 
 .SignFormContainer #email:focus-visible , #name:focus-visible , #Password:focus-visible{
-    outline: var(--primary-color) solid 2px;
+    outline: var(--primary-border);
 }
 
   
 
 
 .SignSubmit{
-    background-color: var(--primary-color);
+    background-color: var(--primary-back-ground-color);
     color: var(--secondary-font-color);
     font-size: var(--body-font-size);
     padding: 10px;
     height: auto;
     cursor: pointer;
-    border: var(--primary-color) solid 2px;
+    border: var(--primary-border);
     border-radius: 20px;
 
 }
 .SignSubmit:hover{
     background-color: var(--main-back-ground-color);
-    border: var(--primary-color) solid 2px;
-    color: var(--primary-color);
+    color: var(--primary-back-ground-color);
 }
 .SignDifferent{
     border: var(--border) ;
@@ -237,15 +240,12 @@ Sign in and Sign up pages
 
 @media screen and (max-width:500px) {
     .SignFormContainer form {
-        width: 80%;
+        width: 75%;
     }   
 }
 
 
-@media screen and (max-width:380px) {
-    .SignFormContainer form {
-        width: 85%;
-    }   
+@media screen and (max-width:380px) { 
 
     .SignDifferent>p{
         display: none;
@@ -255,7 +255,7 @@ Sign in and Sign up pages
         column-gap: 15px;
      }
     .SignDifferent{
-        border-radius: 10px;
+        border: none;
         font-size: 1rem;
     }
 }
@@ -266,7 +266,7 @@ Sign in and Sign up pages
 */
 
 .NavBarContainer{
-    background-color: var(--primary-color);
+    background-color: var(--primary-back-ground-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 10px 20px;
@@ -289,11 +289,11 @@ Sign in and Sign up pages
 
 .NavBarRight >p{
     padding-left:5px ;
-    border-left: var(--secondary-color) solid 1px ;
+    border-left: var(--border) ;
 }
 
 .NavBarLanguage , .NavBarAccount ,.NavBarCart,.NavBarWallet{
-    color: var(--secondary-font-color);
+    color: var(--Fixed-font-color);
     display: flex;
     align-items: center;
     column-gap: 5px;
@@ -344,7 +344,7 @@ Header
     font-family: var(--secondary-font) ,"Outfit" ,'Segoe UI', 'Roboto', 'Oxygen';
     font-weight: 700;
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary-back-ground-color);
 }
 
 .HeaderRight{
@@ -366,8 +366,8 @@ Footer
     left: 0;
     right: 0;
     padding: 7px  20px;
-    background-color: var(--primary-color);
-    color: var(--secondary-font-color);
+    background-color: var(--primary-back-ground-color);
+    color: var(--Fixed-font-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
@@ -375,11 +375,9 @@ Footer
 
 }
 
-.FooterLeft{
+.FooterDiv{
     display: flex;
-    column-gap:var(--sub-main-font-gap);
-    justify-content: flex-end;
-}
+    justify-content: center;}
 
 .FooterContainer p {
     overflow: hidden;
@@ -399,7 +397,7 @@ OffersContainer
 */
 
 .OffersContainer{
-    background-color: var(--secondary-color);
+    background-color: var( --secondary-back-ground-color);
     color: var(--secondary-font-color);
     font-weight: 100;
     text-align: center;
@@ -424,7 +422,7 @@ Landing
 }
 
  .LandingTextWrapper{
-    color: var(--secondary-font-color);
+    color: var(--primary-back-ground-color);
     position: absolute;
     display: grid;
     width: -webkit-fill-available;
@@ -447,7 +445,7 @@ Landing
 .BrandVoice{
     font-size: var(--heading-font-size);
     font-weight: 700;
-    border: var(--secondary-font-color) solid 1px;
+    border: var(--border);
     margin-right: 5%;
     padding: 5px;
     justify-self: flex-end;
@@ -483,7 +481,7 @@ Categories
 }
 
 .slick-next:before, .slick-prev:before {
-    color: var(--secondary-color);
+    color: var( --secondary-back-ground-color);
 }
 
 /* 
@@ -502,7 +500,7 @@ Category Card
     background: rgba(57, 57, 57, 0.5);
     bottom: 7vh;
     justify-content: space-between;
-    color: #e9f2ff;
+    color: var(--Fixed-font-color);
     padding: 5px 10px;
     align-items: center;
     font-size: var(--subheading-font-size);

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ card }) => {
   return (
     <div className="ProductCardContainer">
-      <img src={image} alt="" />
+      <img loading="lazy" src={image} alt="" />
       <div>
         <h4>{card.name}</h4>
         <div className="ProductCardDetails">

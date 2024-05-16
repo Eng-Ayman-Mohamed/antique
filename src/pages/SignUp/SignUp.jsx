@@ -49,7 +49,7 @@ const SignUp = () => {
         </form>
       </div>
       <div className="SignImageContainer">
-        <img src={image} alt="Old books"></img>
+        <img loading="lazy" src={image} alt="Old books"></img>
       </div>
     </div>
   );
